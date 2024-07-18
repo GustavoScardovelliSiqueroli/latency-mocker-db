@@ -28,14 +28,13 @@ def create_database(connection, query):
         raise
 
 def create_database_mock(connection):
-    create_database(connection, "CREATE DATABASE mock_test_db");
+    create_database(connection, "CREATE DATABASE mock_test_db")
 
 def execute_query(connection, query):
     cursor = connection.cursor()
     try:
         cursor.execute(query)
         connection.commit()
-        print("Query successful")
     except Error as err:
         raise err
 
@@ -106,4 +105,31 @@ def execute_sql_file(connection, file_path):
     except Error as err:
         print(Fore.RED + f"Error: '{err}'")
         raise err
+
+
+def select_mocked_data(connection):
+    cursor = connection.cursor()
+    cursor.execute(q.select_table("mocked_table"))
+    cursor.fetchall()
+
+def update_column_mocked_data(connection):
+    cursor = connection.cursor(buffered=True)
+    cursor.execute(q.update_column_table("mocked_table", "column0"))
+    connection.commit()
+
+def delete_mocked_data(connection):
+    cursor = connection.cursor(buffered=True)
+    cursor.execute(q.delete_data_table("mocked_table"))
+    connection.commit()
+
+def delete_table_mocked(connection):
+    cursor = connection.cursor(buffered=True)
+    cursor.execute(q.delete_table("mocked_table"))
+    connection.commit()
+
+def delete_database_mocked(connection):
+    cursor = connection.cursor(buffered=True)
+    cursor.execute(q.delete_database("mock_test_db"))
+    connection.commit()
+    
 

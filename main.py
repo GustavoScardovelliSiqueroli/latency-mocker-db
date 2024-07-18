@@ -82,6 +82,51 @@ if __name__ == "__main__":
     end_time_many_query = time.time()
     print("Runtime " + str(round(end_time_many_query - start_time_many_query, 3)))
 
+    print(Fore.LIGHTBLUE_EX + "\n-Script: How many time to insert?")
+    times_to_insert = int(input("Resp: "))
+
+    print(Fore.LIGHTBLUE_EX + "\n-Script: Query is running...")
+    start_time_many_time_query = time.time()
+    for i in range(times_to_insert):
+        f.execute_query(connection, query)
+    end_time_many_time_query = time.time()
+    print("Runtime " + str(round(end_time_many_time_query - start_time_many_time_query, 3)))
+    input()
+
+    print(Fore.LIGHTBLUE_EX + "\n-Script: SELECTING ALL DATA...")
+    start_time_select = time.time()
+    f.select_mocked_data(connection)
+    end_time_select = time.time()
+    print("Runtime " + str(round(end_time_select - start_time_select, 3)))
+    input()
+
+    print(Fore.LIGHTBLUE_EX + "\n-Script: UPDATING ALL DATA...")
+    start_time_update = time.time()
+    f.update_column_mocked_data(connection)
+    end_time_update = time.time()
+    print("Runtime " + str(round(end_time_update - start_time_update, 3)))
+    input()
+
+    print(Fore.LIGHTBLUE_EX + "\n-Script: DELETING ALL DATA...")
+    start_time_delete = time.time()
+    f.delete_mocked_data(connection)
+    end_time_delete = time.time()
+    print("Runtime " + str(round(end_time_delete - start_time_delete, 3)))
+    input()
+
+    print(Fore.LIGHTBLUE_EX + "\n-Script: DELETING TABLE...")
+    start_time_delete_table = time.time()
+    f.delete_table_mocked(connection)
+    end_time_delete_table = time.time()
+    print("Runtime " + str(round(end_time_delete_table - start_time_delete_table, 3)))
+    input()
+
+    print(Fore.LIGHTBLUE_EX + "\n-Script: DELETING DATABASE...")
+    start_time_delete_database = time.time()
+    f.delete_database_mocked(connection)
+    end_time_delete_database = time.time()
+    print("Runtime " + str(round(end_time_delete_database - start_time_delete_database, 3)))
+    input()
 
 
 

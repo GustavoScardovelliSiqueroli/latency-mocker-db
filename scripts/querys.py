@@ -11,9 +11,8 @@ create_column_varchar_255_query = lambda column_name: f"{column_name} TEXT ,"
 columns = `column_name_1`, `column_name_2` ...
 values = 'value1', 'value2', 'value3' ...
 """
-insert_table = lambda table_name, columns, values: f"""
-INSERT INTO `{table_name}` ({columns}) VALUES {values};
-"""
+insert_table = lambda table_name, columns, values: f"INSERT INTO `{table_name}` ({columns}) VALUES {values};"
+
 select_table = lambda table_name: f"SELECT * FROM {table_name};"
 
 update_column_table = lambda table_name, column_name: f"UPDATE {table_name} SET {column_name} = " + '"UPDATED";'

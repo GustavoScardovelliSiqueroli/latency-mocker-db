@@ -1,5 +1,5 @@
 import scripts.functions_db as f
-from colorama import Fore, Style, init
+from colorama import Fore, init
 import yaml
 import time
 
@@ -127,8 +127,3 @@ if __name__ == "__main__":
     end_time_delete_database = time.time()
     print("Runtime " + str(round(end_time_delete_database - start_time_delete_database, 3)))
     input()
-
-
-
-
-

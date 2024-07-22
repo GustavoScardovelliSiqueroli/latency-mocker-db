@@ -1,0 +1,9 @@
+test_id,action,quantity,runtime
+1,create_table,10,1.854
+1,insert_1,10,0.016
+1,insert_10,10,0.052
+1,select_data,*,0.011
+1,update_data,*,0.05
+1,delete_data,*,0.009
+1,delete_table,*,0.162
+1,delete_db,*,0.022

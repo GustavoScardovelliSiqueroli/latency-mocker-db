@@ -21,9 +21,9 @@ class TerminalService:
         start_time = time.time()
         result = func()
         end_time = time.time()
-        runtime = float(end_time - start_time)
+        runtime = round(float(end_time - start_time), 3)
         print(f"runtime: {str(round(runtime, 3))}")
-        return {"runtime": runtime, "return": result}
+        return {"runtime": str(runtime), "return": result}
 
     def time_exec_message(self, func, message, resp):
         timed_func = lambda: self.time_exec(func)

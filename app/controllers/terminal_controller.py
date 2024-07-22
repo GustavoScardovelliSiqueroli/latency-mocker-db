@@ -3,6 +3,7 @@ from app.services.query_service import QueryService
 from app.services.database_service import DatabaseService
 from colorama import Fore
 
+
 class TerminalController:
     def __init__(self, connection):
         self.terminal_service = TerminalService()
@@ -13,14 +14,12 @@ class TerminalController:
         self.rows_quantity = 1
 
     def start(self):
-
+        query = self.q.create_mocked_table(self.set_column_quantity())
         try:
             self.times["create_table"] = self.terminal_service.time_exec_message(
                 lambda:
-                self.database_service.execute_query(
-                    self.q.create_mocked_table(
-                        self.set_column_quantity())),
-                "How many columns should the table have?",
+                self.database_service.execute_query(query),
+                "Creating table...",
                 "Table created with success!\n"
             )
         except Exception as e:
@@ -89,12 +88,10 @@ class TerminalController:
 
         print(self.times)
 
-    def test_func(self):
-        print("ola, esse é o teste")
-        return "mensagem de retorno do teste"
-
     def set_column_quantity(self):
+        print(Fore.LIGHTBLUE_EX + f"How many columns should the table have?")
         self.column_quantity = int(input("Resp: "))
+        print()
         return self.column_quantity
 
     def set_rows_quantity(self):

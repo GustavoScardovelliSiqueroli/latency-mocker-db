@@ -19,7 +19,7 @@ class ConnectionFactory:
         return mysql.connector.connect(
             host=db_config["host"],
             user=db_config["user"],
-            password=db_config["password"]
+            password=str(db_config["password"])
         )
 
     def create_db_connection_mock(self):
@@ -27,6 +27,6 @@ class ConnectionFactory:
         return mysql.connector.connect(
             host=db_config["host"],
             user=db_config["user"],
-            password=db_config["password"],
+            password=str(db_config["password"]),
             database="mock_test_db",
         )

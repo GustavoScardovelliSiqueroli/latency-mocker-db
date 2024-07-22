@@ -11,14 +11,12 @@ class DatabaseService:
         try:
             cursor.execute("CREATE DATABASE mock_test_db")
         except Error as err:
-            print(f"Error: '{err}'")
             raise err
 
     def execute_query(self, query):
-        cursor = self.connection.cursor()
+        cursor = self.connection.cursor(buffered=True)
         try:
             cursor.execute(query)
             self.connection.commit()
         except Error as err:
-            print(f"Error: '{err}'")
             raise err

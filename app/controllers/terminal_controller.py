@@ -1,7 +1,7 @@
-from app.services.terminal_service import TerminalService
-from app.services.query_service import QueryService
-from app.services.database_service import DatabaseService
-from app.services.csv_service import CsvService
+from services.terminal_service import TerminalService
+from services.query_service import QueryService
+from services.database_service import DatabaseService
+from services.csv_service import CsvService
 from colorama import Fore
 
 

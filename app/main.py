@@ -1,6 +1,6 @@
-from app.controllers.terminal_controller import TerminalController
-from app.factories.connection_factory import ConnectionFactory
-from app.services.database_service import DatabaseService
+from controllers.terminal_controller import TerminalController
+from factories.connection_factory import ConnectionFactory
+from services.database_service import DatabaseService
 import os
 
 def start():

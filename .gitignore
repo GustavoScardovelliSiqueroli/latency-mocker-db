@@ -164,4 +164,7 @@ cython_debug/
 .result.csv
 result.csv
 ./result.csv
+config.yaml
+.config.yaml
+./config.yaml
 

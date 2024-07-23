@@ -1,9 +1,0 @@
-test_id,action,quantity,runtime
-1,create_table,100 columns,"""2.426"""
-1,insert_1,1 row,"""0.46"""
-1,insert_100,100 rows,"""1.816"""
-1,select_data,*,"""1.224"""
-1,update_data,*,"""0.489"""
-1,delete_data,*,"""0.457"""
-1,delete_table,*,"""0.495"""
-1,delete_db,*,"""0.461"""

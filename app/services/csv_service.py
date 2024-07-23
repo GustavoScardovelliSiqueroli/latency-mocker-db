@@ -37,4 +37,4 @@ class CsvService:
                 writer.writerow(fieldnames)
 
             for x, y in data.items():
-                writer.writerow((next_test_id , x, f'{y["quantity"]}', f'"{y["runtime"]}"'))
+                writer.writerow((next_test_id, x, f'{y["quantity"]}', f'"{y["runtime"]}"'))
